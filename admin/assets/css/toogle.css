@@ -1,0 +1,9 @@
+body{margin:0;padding:0;}
+		#wrapmenu{position: fixed;width: 30%;height: 100%;background: #262626;left:-30%;}
+		#wrapmenu ul{margin:0;padding:0;}
+		#wrapmenu ul li{font-size: 16px;border-bottom: solid grey;text-align: center;padding:30px;list-style: none;text-transform: uppercase;}
+		#wrapmenu ul li:hover{background: aqua}
+		#wrapmenu ul li a{text-decoration: none;color: #ffffff}
+		.btn-menu{position: absolute;left:105%;top:15px;}
+		.btn-menu span{display: block;background:#000000;width: 30px;height: 5px;margin:3px; }
+		#wrapmenu.active{left:0;}
