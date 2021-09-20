@@ -6,14 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Pendaftaran | esemka-his</title>
   	<link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <script src="js/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-
 	  <!--link bootstrap-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		  <!--/link bootstrap-->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -116,7 +111,7 @@
 							<th><i class="glyphicon glyphicon-cog"></i></th>
 						</tr>
 					</thead>
-					<ody>
+					<tbody>
 						<?php
 						include '../../config.php';
 						$no = 1;
@@ -145,12 +140,12 @@
 									}?>
 								</td>
 								<td align="center">
-									<a href="del.php?id=<?= $data['id_rm'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin menghapus data?')"><i class="glyphicon glyphicon-trash"></i></a>
+								<a href="del.php?id=<?=$data['id_rm']?>" onclick="return confirm('Yakin akan menghapus data?')" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
 								</td>
 							</tr>
 						<?php
 						} ?>
-					</ody>
+					</tbody>
 				</table>
 			</div>
 		</form>

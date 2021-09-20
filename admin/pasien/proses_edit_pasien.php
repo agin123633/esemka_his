@@ -1,7 +1,7 @@
 <?php
 include 'konek.php';
 $id_pasien = $_POST['id_pasien'];
-if (isset($_POST['simpan'])) {
+if (isset($_POST['Simpan'])) {
   $tgl_daftar = $_POST['tgl_daftar'];
   $nama_pasien = $_POST['nama_pasien'];
   $alamat = $_POST['alamat'];

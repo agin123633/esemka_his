@@ -150,7 +150,7 @@
 										</div>
 										<div class="form-group">
 											<label for="obat">Obat</label>
-											<select multiple="" size="7" name="obat[]" id="obat" class="form-control" required="">
+											<select multiple name="obat[]" id="obat" class="form-control" size="7" required="">
 												<?php
 												$sql_obat = mysqli_query($koneksi, "SELECT * FROM obat") or die(mysqli_error($koneksi));
 												while($data_obat = mysqli_fetch_array($sql_obat)){

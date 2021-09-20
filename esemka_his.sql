@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Agu 2021 pada 14.30
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.2.32
+-- Generation Time: Sep 19, 2021 at 04:25 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +35,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
@@ -43,7 +44,7 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dokter`
+-- Table structure for table `dokter`
 --
 
 CREATE TABLE `dokter` (
@@ -55,7 +56,7 @@ CREATE TABLE `dokter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `dokter`
+-- Dumping data for table `dokter`
 --
 
 INSERT INTO `dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`) VALUES
@@ -65,7 +66,7 @@ INSERT INTO `dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_tel
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `obat`
+-- Table structure for table `obat`
 --
 
 CREATE TABLE `obat` (
@@ -76,7 +77,7 @@ CREATE TABLE `obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `obat`
+-- Dumping data for table `obat`
 --
 
 INSERT INTO `obat` (`id_obat`, `nama_obat`, `harga_obat`, `ket_obat`) VALUES
@@ -86,7 +87,7 @@ INSERT INTO `obat` (`id_obat`, `nama_obat`, `harga_obat`, `ket_obat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pasien`
+-- Table structure for table `pasien`
 --
 
 CREATE TABLE `pasien` (
@@ -102,18 +103,19 @@ CREATE TABLE `pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pasien`
+-- Dumping data for table `pasien`
 --
 
 INSERT INTO `pasien` (`id_pasien`, `tgl_daftar`, `no_identitas`, `nama_pasien`, `tgl_lahir`, `jk`, `alamat`, `no_hp`, `status`) VALUES
 ('6acf2e65-5de1-491a-8696-6e137e84f76a', '2021-08-29', '1', 'Andri', '2003-05-06', 'Laki-laki', 'Karangan', '123', 'Daftar'),
-('a5c706f8-4a2e-408b-8c7f-cb6601a09cfb', '2021-08-29', '2', 'www', '0022-02-22', 'Perempuan', 'wqs', '222', 'Daftar'),
-('fb1dbba6-2c2e-499a-82c6-199b9c4dcc36', '2021-08-29', '3', 'aaa', '2021-08-28', 'Laki-laki', 'aa', '342', 'Daftar');
+('a5c706f8-4a2e-408b-8c7f-cb6601a09cfb', '2021-08-29', '2', 'wwwxxx', '0022-02-22', 'Perempuan', 'wqs', '222', 'Daftar'),
+('f7cfcbc3-05f6-4505-a1f1-58c4c27fdd9b', '2021-09-03', '145678', 'ike', '2021-08-30', 'Perempuan', 'ngendi', '08966564', 'Daftar'),
+('fb1dbba6-2c2e-499a-82c6-199b9c4dcc36', '2021-08-29', '3', 'anjing', '2021-08-28', 'Laki-laki', 'aa', '342', 'Daftar');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `poli`
+-- Table structure for table `poli`
 --
 
 CREATE TABLE `poli` (
@@ -123,7 +125,7 @@ CREATE TABLE `poli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `poli`
+-- Dumping data for table `poli`
 --
 
 INSERT INTO `poli` (`id_poli`, `nama_poli`, `gedung`) VALUES
@@ -133,7 +135,7 @@ INSERT INTO `poli` (`id_poli`, `nama_poli`, `gedung`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rekammedis`
+-- Table structure for table `rekammedis`
 --
 
 CREATE TABLE `rekammedis` (
@@ -150,19 +152,16 @@ CREATE TABLE `rekammedis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `rekammedis`
+-- Dumping data for table `rekammedis`
 --
 
 INSERT INTO `rekammedis` (`id_rm`, `id_pasien`, `id_dokter`, `id_poli`, `tgl_periksa`, `tinggi_badan`, `berat_badan`, `keluhan`, `diagnosa`, `tindakan`) VALUES
-('1', '6acf2e65-5de1-491a-8696-6e137e84f76a', '350d394e-0933-41f3-9dff-15c7c2c7379b', 'tht', '2021-04-05', '8', '8', 'aa', 'asd', 'dwsa'),
-('2fccabe2-1e8f-476b-aa44-33e8ece8b2f4', 'fb1dbba6-2c2e-499a-82c6-199b9c4dcc36', '350d394e-0933-41f3-9dff-15c7c2c7379b', 'c985500e-38fe-4b16-8ac3-cb6c75917669', '2021-08-30', '', '', 'aaa', 'asas', ''),
-('3c730e99-bc16-4cea-a1d2-20bd9754fecd', '6acf2e65-5de1-491a-8696-6e137e84f76a', 'a0cff5de-a297-4a07-9540-0a24ad9a7937', 'c985500e-38fe-4b16-8ac3-cb6c75917669', '2021-08-30', '', '', 'ddd', 'wqdqwa', ''),
-('490b3e63-f4fc-4f61-a164-27a0b4d94b68', 'a5c706f8-4a2e-408b-8c7f-cb6601a09cfb', '350d394e-0933-41f3-9dff-15c7c2c7379b', 'c985500e-38fe-4b16-8ac3-cb6c75917669', '2021-08-30', '', '', 'ddd', 'wqdqwa', '');
+('8e0b51cb-6dc0-4d7f-85bb-1e1e53fd6d8a', 'a5c706f8-4a2e-408b-8c7f-cb6601a09cfb', 'a0cff5de-a297-4a07-9540-0a24ad9a7937', 'c985500e-38fe-4b16-8ac3-cb6c75917669', '2021-09-19', '', '', 'pilek', 'mamamaa', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rm_obat`
+-- Table structure for table `rm_obat`
 --
 
 CREATE TABLE `rm_obat` (
@@ -172,48 +171,48 @@ CREATE TABLE `rm_obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `rm_obat`
+-- Dumping data for table `rm_obat`
 --
 
 INSERT INTO `rm_obat` (`id`, `id_rm`, `id_obat`) VALUES
-(0, '2fccabe2-1e8f-476b-aa44-33e8ece8b2f4', '393e3629-20db-4efd-a8a9-f4aa573bdc8e');
+(0, '8e0b51cb-6dc0-4d7f-85bb-1e1e53fd6d8a', '38622d67-9104-4615-8c9d-c51f5f0b23b2');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `dokter`
+-- Indexes for table `dokter`
 --
 ALTER TABLE `dokter`
   ADD PRIMARY KEY (`id_dokter`);
 
 --
--- Indeks untuk tabel `obat`
+-- Indexes for table `obat`
 --
 ALTER TABLE `obat`
   ADD PRIMARY KEY (`id_obat`);
 
 --
--- Indeks untuk tabel `pasien`
+-- Indexes for table `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`id_pasien`);
 
 --
--- Indeks untuk tabel `poli`
+-- Indexes for table `poli`
 --
 ALTER TABLE `poli`
   ADD PRIMARY KEY (`id_poli`);
 
 --
--- Indeks untuk tabel `rekammedis`
+-- Indexes for table `rekammedis`
 --
 ALTER TABLE `rekammedis`
   ADD PRIMARY KEY (`id_rm`),
@@ -222,7 +221,7 @@ ALTER TABLE `rekammedis`
   ADD KEY `id_poli` (`id_poli`);
 
 --
--- Indeks untuk tabel `rm_obat`
+-- Indexes for table `rm_obat`
 --
 ALTER TABLE `rm_obat`
   ADD PRIMARY KEY (`id`),
@@ -230,31 +229,33 @@ ALTER TABLE `rm_obat`
   ADD KEY `id_obat` (`id_obat`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `rekammedis`
+-- Constraints for table `rekammedis`
 --
 ALTER TABLE `rekammedis`
   ADD CONSTRAINT `rekammedis_ibfk_1` FOREIGN KEY (`id_dokter`) REFERENCES `dokter` (`id_dokter`),
-  ADD CONSTRAINT `rekammedis_ibfk_2` FOREIGN KEY (`id_pasien`) REFERENCES `pasien` (`id_pasien`);
+  ADD CONSTRAINT `rekammedis_ibfk_2` FOREIGN KEY (`id_pasien`) REFERENCES `pasien` (`id_pasien`),
+  ADD CONSTRAINT `rekammedis_ibfk_3` FOREIGN KEY (`id_poli`) REFERENCES `poli` (`id_poli`);
 
 --
--- Ketidakleluasaan untuk tabel `rm_obat`
+-- Constraints for table `rm_obat`
 --
 ALTER TABLE `rm_obat`
-  ADD CONSTRAINT `rm_obat_ibfk_1` FOREIGN KEY (`id_rm`) REFERENCES `rekammedis` (`id_rm`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `rm_obat_ibfk_1` FOREIGN KEY (`id_rm`) REFERENCES `rekammedis` (`id_rm`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rm_obat_ibfk_2` FOREIGN KEY (`id_obat`) REFERENCES `obat` (`id_obat`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
